@@ -1,0 +1,125 @@
+/* globals.css */
+
+/* Import friendly font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Basic resets */
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', sans-serif; /* Friendly font */
+  background-color: #e6fffa; /* very light green background */
+  color: #065f46; /* dark green text */
+  line-height: 1.6;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Box sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Navbar styling */
+.navbar {
+  display: flex;
+  justify-content: center; /* center all links/buttons */
+  gap: 2rem; /* space evenly */
+  background-color: #10b981; /* bright green */
+  padding: 1rem 2rem;
+  color: white;
+  font-weight: 600;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar a {
+  color: white;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.navbar a:hover {
+  color: #d1fae5;
+}
+
+.navbar button {
+  background-color: #059669;
+  color: white;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.navbar button:hover {
+  background-color: #047857;
+}
+
+/* Buttons */
+button {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #059669;
+}
+
+/* Trash cards */
+.trash-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.trash-card p {
+  margin: 0.3rem 0;
+}
+
+/* Inputs */
+input {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #d1fae5; /* light green border */
+  margin-right: 0.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+input:focus {
+  outline: none;
+  border-color: #10b981;
+}
+
+/* Forms */
+.form-container {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+/* Page titles */
+h1, h2, h3 {
+  color: #065f46;
+  font-weight: 700;
+}
+
+/* Friendly smaller text */
+p {
+  font-weight: 400;
+}
+
+

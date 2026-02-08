@@ -15,25 +15,20 @@ export default function Navbar() {
   const handleLogout = () => {
     localStorage.removeItem("token");
     setToken(null);
-    router.push("/");
+    router.push("/trash");
   };
 
   return (
-    <nav style={{ padding: "1rem", borderBottom: "1px solid #ccc" }}>
-      <Link href="/">Home</Link>{" "}
-      {token && (
-        <>
-          | <Link href="/saved-trash">Saved Trash</Link>
-          | <button onClick={handleLogout}>Logout</button>
-        </>
-      )}
-      {!token && (
-        <>
-          | <Link href="/login">Login</Link>
-          | <Link href="/signup">Sign Up</Link>
-        </>
-      )}
+    <nav className="navbar" style={{ justifyContent: "center" }}>
+      <div style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
+        <Link href="/trash">Trash Sorter</Link>
+        {token && <Link href="/saved-trash">Saved Trash</Link>}
+        {!token && <Link href="/login">Login</Link>}
+        {!token && <Link href="/signup">Sign Up</Link>}
+        {token && <button onClick={handleLogout}>Logout</button>}
+      </div>
     </nav>
   );
 }
+
 
