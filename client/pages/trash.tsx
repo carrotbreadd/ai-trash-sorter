@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import Navbar from "@/src/components/Navbar";
 
 export default function TrashPage() {
   const router = useRouter();
@@ -10,21 +11,16 @@ export default function TrashPage() {
   const [result, setResult] = useState<string | null>(null);
   const [source, setSource] = useState<string | null>(null);
 
-  // Check for token
   useEffect(() => {
-    const storedToken = localStorage.getItem("token");
-    setToken(storedToken);
+    setToken(localStorage.getItem("token"));
   }, []);
 
   const handleSort = async () => {
-    // Example: call AI or rules API
-    const aiResult = "Recycle"; // Replace with your API call
-
+    const aiResult = "Recycle"; // replace with actual AI logic
     setResult(aiResult);
     setSource("ai-assisted");
 
     if (token) {
-      // Save to server if logged in
       try {
         await fetch("http://localhost:5001/api/trash", {
           method: "POST",
@@ -41,31 +37,32 @@ export default function TrashPage() {
   };
 
   return (
-    <div>
-      <h1>♻️ AI Trash Sorter</h1>
-      <input
-        type="text"
-        value={item}
-        onChange={(e) => setItem(e.target.value)}
-        placeholder="Enter your trash"
-      />
-      <button onClick={handleSort}>Sort It</button>
+    <>
+      <Navbar />
+      <div style={{ padding: "1rem" }}>
+        <h1>♻️ AI Trash Sorter</h1>
+        <input
+          type="text"
+          value={item}
+          onChange={(e) => setItem(e.target.value)}
+          placeholder="Enter your trash"
+        />
+        <button onClick={handleSort}>Sort It</button>
 
-      {result && (
-        <div>
-          <p>Result: {result}</p>
-          <p>Source: {source}</p>
-        </div>
-      )}
+        {result && (
+          <div>
+            <p>Result: {result}</p>
+            <p>Source: {source}</p>
+          </div>
+        )}
 
-      {!token && (
-        <div>
-          <p>Login to save your progress!</p>
-          <button onClick={() => router.push("/login")}>Login</button>
-          <button onClick={() => router.push("/signup")}>Sign Up</button>
-        </div>
-      )}
-    </div>
+        {!token && (
+          <div>
+            <p>Login to save your progress!</p>
+          </div>
+        )}
+      </div>
+    </>
   );
 }
 
