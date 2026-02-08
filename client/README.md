@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Trash Sorter
 
-## Getting Started
+**Author:** Julia Lee  
+**Tier Level:** Intermediate  
 
-First, run the development server:
+---
 
+## Project Description
+AI Trash Sorter allows users to sort trash quickly without having to guess which bin each item goes into. Users can also track their waste in a personal trash list by signing up, enabling them to save and view their progress over time.
+
+The web app features:  
+- AI-powered trash classification (Recycle or Landfill)  
+- User authentication (signup/login)  
+- Saved trash history for authenticated users  
+- Responsive, green-themed user interface  
+
+---
+
+## Technologies Used
+- **Languages:** TypeScript, JavaScript, HTML, CSS  
+- **Frontend Framework:** Next.js, React  
+- **Backend Framework:** Node.js, Express  
+- **Database:** MongoDB (Atlas)  
+- **APIs:** OpenAI API for AI classification  
+- **Authentication:** JWT, bcrypt  
+- **Hosting/Dev Tools:** npm, ts-node, dotenv  
+
+---
+
+## Project Timeline
+
+### Friday – Planning & Setup
+**Goals:**  
+- Decide on project scope (solo project)  
+- Install dependencies  
+- Create project plan  
+
+**Progress:**  
+- Chose AI Trash Sorter as the project topic  
+- Set up initial Node.js + TypeScript environment  
+- Planned authenticated vs. unauthenticated modes  
+
+**Challenges:**  
+1. Prisma was difficult to configure  
+   - **Solution:** Switched to MongoDB, which was easier to use  
+2. Refreshing coding skills after a break  
+   - **Solution:** Reviewed past projects and used ChatGPT for explanations  
+
+**Learning:**  
+- MongoDB setup and Node.js configuration  
+- Organizing a project outline  
+
+**AI Usage:**  
+- OpenAI used to explain Prisma concepts and Node.js integration  
+
+---
+
+### Saturday – Implementation
+**Goals:**  
+- Integrate AI for trash classification  
+- Set up frontend and backend  
+- Build basic UI  
+
+**Progress:**  
+- Connected frontend to backend routes (auth and trash)  
+- Built Trash page, Saved Trash page, AuthPage, and Unauthorized page  
+- Implemented ProtectedRoute for authentication  
+
+**Challenges:**  
+1. OpenAI API key setup  
+   - **Solution:** Used a paid key to access API  
+2. UI adjustments and styling issues  
+   - **Solution:** Referenced past projects and tested various styles  
+
+**Learning:**  
+- React + Next.js component structure  
+- OpenAI API integration  
+- CSS styling and green-themed UI design  
+
+**AI Usage:**  
+- ChatGPT used to explain OpenAI API usage and CSS implementation  
+
+---
+
+### Sunday – Finalization
+**Goals:**  
+- Polish UI  
+- Finalize authentication flows  
+- Complete project for submission  
+
+**Progress:**  
+- Finalized Navbar and consistent green theme  
+- Implemented Saved Trash functionality  
+- Fixed authentication and conditional rendering messages  
+
+**Challenges:**  
+1. Old files causing 404 errors  
+   - **Solution:** Deleted unnecessary files and reorganized pages  
+2. Layout improvements  
+   - **Solution:** Added Navbar for consistent navigation  
+
+**Learning:**  
+- Importance of keeping automatically generated files intact  
+- Building a reusable Navbar  
+- Integrating backend authentication with frontend UI  
+
+**AI Usage:**  
+- Used ChatGPT to debug routing, styling, and API integration  
+
+---
+
+## Setup Instructions
+1. Clone the repository:  
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+git clone https://github.com/carrotbreadd/ai-trash-sorter
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
