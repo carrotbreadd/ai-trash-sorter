@@ -1,19 +1,23 @@
 import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
 
+// Load .env variables immediately
 dotenv.config();
 
-const uri = process.env.MONGODB_URI;
-if (!uri) throw new Error("Missing MONGODB_URI");
+const uri = process.env.DATABASE_URL as string;
 
-const client = new MongoClient(uri);
+if (!uri) {
+  throw new Error("Missing DATABASE_URL in .env");
+}
 
-let db: any;
+let client: MongoClient;
 
 export async function connectDB() {
-  if (!db) {
+  if (!client) {
+    client = new MongoClient(uri);
     await client.connect();
-    db = client.db(process.env.DB_NAME);
+    console.log("MongoDB connected");
   }
-  return db;
+  return client.db("trash-sorter"); // your DB name
 }
+
